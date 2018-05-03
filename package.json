@@ -4,7 +4,10 @@
   "description": "component with vue 2.5 and es6",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack --watch",
+    "start": "webpack-dev-server --open",
+    "build": "webpack --env.production"
   },
   "repository": {
     "type": "git",
@@ -20,8 +23,7 @@
     "url": "https://github.com/Geek-JCY/JDFinance/issues"
   },
   "homepage": "https://github.com/Geek-JCY/JDFinance#readme",
-  
-  "eslintConfig":{
+  "eslintConfig": {
     "root": true,
     "parserOptions": {
       "ecmaVersion": 2017
@@ -55,7 +57,7 @@
         4
       ],
       "vue/max-attributes-per-line": "off"
-    }   
+    }
   },
   "eslintIgnore": [
     "node_modules",
