@@ -1,27 +1,28 @@
 {
-  "name": "jd_finance",
+  "name": "JDFinance",
   "version": "1.0.0",
   "description": "component with vue 2.5 and es6",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack --watch",
+    "start": "webpack-dev-server --open",
+    "build": "webpack --env.production"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Geek-JCY/JDFinance.git"
+    "url": "git+ssh://git@gitlab.com/imooc/vuejs.git"
   },
   "keywords": [
     "es6",
     "component"
   ],
-  "author": "jcy_jcy_jcy_we@163.com",
-  "license": "ISC",
+  "author": "cuc_ygh@163.com",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Geek-JCY/JDFinance/issues"
+    "url": "https://gitlab.com/imooc/vuejs/issues"
   },
-  "homepage": "https://github.com/Geek-JCY/JDFinance#readme",
-  
-  "eslintConfig":{
+  "eslintConfig": {
     "root": true,
     "parserOptions": {
       "ecmaVersion": 2017
@@ -55,12 +56,13 @@
         4
       ],
       "vue/max-attributes-per-line": "off"
-    }   
+    }
   },
   "eslintIgnore": [
     "node_modules",
     "webpack.config.js"
   ],
+  "homepage": "https://gitlab.com/imooc/vuejs#README",
   "dependencies": {
     "clean-webpack-plugin": "^0.1.17",
     "css-hot-loader": "^1.3.4",
