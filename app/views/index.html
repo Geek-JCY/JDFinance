@@ -7,10 +7,85 @@
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <title>Test</title>
+    <style>
+      a {
+        cursor: pointer;
+      }
+      h3,h4{
+        color: red;
+      }
+      h3 { font-size: 18px;}
+      h4 { font-size: 16px;}
+    </style>
   </head>
   <body>
-    <article id="app">
+    <article id="app"></article>
+    <hr>
+    <h3>spa 的实现方式</h3>
+    <div>
+      <h4>History 模式</h4>
+      <a class="api a">a.html</a>
+      <a class="api b">b.html</a>
+    </div>
+    <div>
+        <h4>Hash 模式</h4>
+        <a class="hash a">#a.html</a>
+        <a class="hash b">#b.html</a>
+      </div>
 
-    </article>
+    <script>
+      /*
+       * history 模式
+       */
+      // TODO:注册路由
+      document.querySelectorAll('.api').forEach(item=>{
+        item.addEventListener('click', (e)=>{
+          e.preventDefault();
+          let link = item.textContent;
+          window.history.pushState({name:"api"}, link, link);
+        }, false);
+      });
+      // TODO:监听路由
+      // window.addEventListener('popstate', (e)=>{
+      //   console.log({
+      //     location: location.href,
+      //     state: e.state
+      //   });
+      // }, false);
+      // 或者如下的写法
+      window.onpopstate = function(e){
+          console.log({
+              location: location.href,
+              state: e.state
+          });
+      }
+
+      /*
+       * hash 模式注册路由
+       */
+      // TODO:注册路由
+      document.querySelectorAll('.hash').forEach(item=>{
+        item.addEventListener('click', (e)=>{
+          e.preventDefault();
+          let link = item.textContent;
+          location.hash = link;
+        }, false);
+      });
+      // TODO:监听路由
+      // window.addEventListener('hashchange', (e)=>{
+      //   console.log({
+      //       location: location.href,
+      //       hash: location.hash
+      //   });
+      // }, false);
+      // 或者如下的写法
+      window.onhashchange = function(e){
+          console.log({
+              location: location.href,
+              hash: location.hash
+          });
+      }
+
+    </script>
   </body>
 </html>
