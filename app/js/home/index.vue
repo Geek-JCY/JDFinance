@@ -1,14 +1,17 @@
 <template lang="html">
     <div :class="$style.home">
-        <heador/>
+        <Heador/>
+        <Slider/>
     </div>
 </template>
 
 <script>
-import heador from "../public/header.vue"
+import Heador from "../public/header.vue"
+import Slider from "./hslider.vue"
 export default {
     components: {
-        heador,
+        Heador,
+        Slider,
     },
 }
 </script>
