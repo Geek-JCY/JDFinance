@@ -7,8 +7,8 @@
                 </router-link>
             </swiper-slide>
             <div v-if="swiperOption.pagination" slot="pagination" class="swiper-pagination" />
-            <div v-if="swiperOption.navigation.prevEl" slot="button-prev" class="swiper-button-prev"/>
-            <div v-if="swiperOption.navigation.nextEl" slot="button-next" class="swiper-button-next"/>
+            <div v-if="swiperOption.navigation&&swiperOption.navigation.prevEl" slot="button-prev" class="swiper-button-prev"/>
+            <div v-if="swiperOption.navigation&&swiperOption.navigation.nextEl" slot="button-next" class="swiper-button-next"/>
         </swiper>
     </section>
 </template>

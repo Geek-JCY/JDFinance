@@ -25,6 +25,7 @@ export default {
     line-height: 100px;
     background: #fff url(//m.jr.jd.com/spe/qyy/main/images/jr-logo.png) center center no-repeat;
     background-size: auto 50%;
+    box-shadow: 0 1px 3px 5px rgba(43, 41, 41, 0.1);
     color: #666;
     font-size: 28px;
     .left {
