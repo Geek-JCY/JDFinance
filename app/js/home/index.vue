@@ -1,3 +1,4 @@
+/* 首页 组件 */
 <template lang="html">
     <div>
         <Heador/>
