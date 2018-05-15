@@ -5,6 +5,7 @@ import Money from "../money/index.vue"
 import Ious from "../ious/index.vue"
 import Raise from "../raise/index.vue"
 import "../../css/reset.scss"
+import "../../css/global.scss"
 
 Vue.use(Router)
 

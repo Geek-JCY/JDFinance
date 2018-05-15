@@ -4,6 +4,8 @@
         <Heador/>
         <Rslider/>
         <Daily/>
+        <In/>
+        <More/>
         <Footer cname="rfooter"/>
         <Navbar/>
     </div>
@@ -15,11 +17,15 @@ import Footer from "../public/footer.vue"
 import Navbar from "../public/navbar.vue"
 import Rslider from "./rslider.vue"
 import Daily from "./daily.vue"
+import In from "./in.vue"
+import More from "./more.vue"
 export default {
     components: {
         Heador,
         Rslider,
         Daily,
+        In,
+        More,
         Footer,
         Navbar,
     },
