@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 module.exports = env => {
   if (!env) {
     env = {}
@@ -20,7 +21,8 @@ module.exports = env => {
           NODE_ENV: '"production"'
         }
       }),
-      new ExtractTextPlugin("style.css", {ignoreOrder: true})
+      new ExtractTextPlugin("style.css", {ignoreOrder: true}),
+      new UglifyJsPlugin()
     )
   }
   return {
