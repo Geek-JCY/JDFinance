@@ -48,7 +48,7 @@ export default {
     .panel {
         @include panel;
         >h4 {
-            border: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
         }
         .content {
             @include list;
