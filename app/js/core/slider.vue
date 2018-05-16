@@ -1,7 +1,7 @@
 <template lang="html">
     <section :class="cname">
         <swiper :options="swiperOption">
-            <swiper-slide v-for="item in items" :key="item.href">
+            <swiper-slide v-for="item in items" :key="item.src">
                 <router-link :to="{name: item.href}">
                     <img :src="item.src" alt="" >
                 </router-link>
@@ -46,9 +46,10 @@ export default {
         items: {
             type: Array,
             default() {
-                return [
-                    // { href: "", src: "" },
-                ]
+                return [{
+                    href: "",
+                    src: "",
+                }]
             },
         },
     },
