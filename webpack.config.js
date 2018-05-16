@@ -3,7 +3,6 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 module.exports = env => {
   if (!env) {
     env = {}
@@ -21,15 +20,11 @@ module.exports = env => {
           NODE_ENV: '"production"'
         }
       }),
-      new ExtractTextPlugin("style.css", {ignoreOrder: true}),
-      new UglifyJsPlugin({
-        sourceMap: true
-      })
+      new ExtractTextPlugin("style.css", {ignoreOrder: true})
     )
   }
   return {
     entry: ['./app/js/viewport.js', './app/js/main.js'],
-    devtool: 'source-map',
     devServer: {
       contentBase: './dist',
       hot: true,
@@ -53,8 +48,8 @@ module.exports = env => {
             },
             extractCSS: true,
             loaders: env.production?{
-              css: ExtractTextPlugin.extract({use: 'css-loader?minimize!px2rem-loader?remUnit=40&remPrecision=8', fallback: 'vue-style-loader'}),
-              scss: ExtractTextPlugin.extract({use: 'css-loader?minimize!px2rem-loader?remUnit=40&remPrecision=8!sass-loader', fallback: 'vue-style-loader'})
+              css: ExtractTextPlugin.extract({use: 'css-loader!px2rem-loader?remUnit=40&remPrecision=8', fallback: 'vue-style-loader'}),
+              scss: ExtractTextPlugin.extract({use: 'css-loader!px2rem-loader?remUnit=40&remPrecision=8!sass-loader', fallback: 'vue-style-loader'})
             }:{
               css: 'vue-style-loader!css-loader!px2rem-loader?remUnit=40&remPrecision=8',
               scss: 'vue-style-loader!css-loader!px2rem-loader?remUnit=40&remPrecision=8!sass-loader'
